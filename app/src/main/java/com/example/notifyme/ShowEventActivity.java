@@ -41,9 +41,16 @@ public class ShowEventActivity extends AppCompatActivity {
         //get the event string into the array
         String[] temp = intent.getStringArrayExtra("eventList");
 
+        //get the time array into an array
+        String[] timeTemp = intent.getStringArrayExtra("timeList");
+
         //we want to now create a list of events
-        for (String s : temp) {
-            Event e = new Event(s, intent.getStringExtra("date"));
+//        for (String s : temp) {
+//            Event e = new Event(s, intent.getStringExtra("date"));
+//            eventList.add(e);
+//        }
+        for (int i = 0; i < temp.length; i++) {
+            Event e = new Event(temp[i], intent.getStringExtra("date"), timeTemp[i]);
             eventList.add(e);
         }
 

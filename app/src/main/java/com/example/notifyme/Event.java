@@ -3,10 +3,12 @@ package com.example.notifyme;
 public class Event {
     String title;
     String date;
+    String time;
 
-    public Event(String title, String date) {
+    public Event(String title, String date, String time) {
         this.title = title;
         this.date = date;
+        this.time = time;
     }
 
     public String getTitle() {
@@ -23,5 +25,13 @@ public class Event {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
     }
 }

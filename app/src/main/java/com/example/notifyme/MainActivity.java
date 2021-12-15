@@ -94,28 +94,33 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("date", selectedDate);
                 //create a temporary list
                 List<Event> temp;
-                //create an array of strings
+                //create arrays of strings to hold the descriptions and times
                 String[] itemsArray;
+                String[] timeArray;
                 //check to see of there is a list for the selected date
                 if (eventMap.containsKey(selectedDate)) {
                     //grab the list of events
                     temp = eventMap.get(selectedDate);
                     //make the size of the array the size of the list
                     itemsArray = new String[temp.size()];
+                    timeArray = new String [temp.size()];
                     //counter
                     int i = 0;
                     //for each event in the list, copy the description to the array
                     for (Event e : temp) {
                         itemsArray[i] = e.getTitle();
+                        timeArray[i] = e.getTime();
                         i++;
                     }
                 }
                 //if there is no list, make the array empty
                 else {
                     itemsArray = new String[0];
+                    timeArray = new String[0];
                 }
                 //add the array to the intent
                 intent.putExtra("eventList", itemsArray);
+                intent.putExtra("timeList", timeArray);
                 launcher.launch(intent);
             }
         });
@@ -130,8 +135,10 @@ public class MainActivity extends AppCompatActivity {
                             Intent data = result.getData();
                             //string to get the event data
                             String event = data.getStringExtra("event");
+                            //string for the time
+                            String time = data.getStringExtra("time");
                             //create a new event object
-                            Event newEvent = new Event(event, selectedDate);
+                            Event newEvent = new Event(event, selectedDate, time);
                             //check to see if that map already holds events for the selected date,
                             //if not, we need to do work to add the key to the map
                             //this if statement takes care if the data is already on map, then we jsut add the event
