@@ -65,7 +65,7 @@ public class CreateEventActivity extends AppCompatActivity {
                 //add the event description to the intent
                 intent.putExtra("event", eventInputText.getText().toString());
                 //add the time to the intent
-                String time = hourEditText.getText().toString() + "  :  " +
+                String time = hourEditText.getText().toString() + " : " +
                         minuteEditText.getText().toString() + "  " + spinner.getSelectedItem().toString();
                 intent.putExtra("time", time);
                 CreateEventActivity.this.setResult(Activity.RESULT_OK, intent);

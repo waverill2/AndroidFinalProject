@@ -48,28 +48,30 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
+        android:id="@+id/minuteEditText"
+        android:layout_width="84dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="00"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toStartOf="@+id/spinner"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/colonTextView"
+        app:layout_constraintTop_toBottomOf="@+id/timeTextView" />
+
+    <EditText
         android:id="@+id/hourEditText"
         android:layout_width="84dp"
         android:layout_height="39dp"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="00"
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toStartOf="@+id/colonTextView"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/timeTextView" />
-
-    <EditText
-        android:id="@+id/minuteEditText"
-        android:layout_width="84dp"
-        android:layout_height="39dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="00"
-        app:layout_constraintEnd_toStartOf="@+id/spinner"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/colonTextView"
         app:layout_constraintTop_toBottomOf="@+id/timeTextView" />
 
     <TextView
@@ -90,6 +92,7 @@
         android:id="@+id/colonTextView"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
+        android:layout_marginTop="16dp"
         android:text=":"
         app:layout_constraintBottom_toBottomOf="@+id/hourEditText"
         app:layout_constraintEnd_toStartOf="@+id/minuteEditText"

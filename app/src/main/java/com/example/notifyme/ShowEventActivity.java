@@ -70,11 +70,14 @@ public class ShowEventActivity extends AppCompatActivity {
     class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomViewHolder> {
         class CustomViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
             TextView myText1;
+            TextView myText3;
 
             public CustomViewHolder(@NonNull View itemView) {
                 super(itemView);
                 //get the text view
                 myText1 = itemView.findViewById(R.id.myText1);
+                myText3 = itemView.findViewById(R.id.textView3);
+
 
                 itemView.setOnClickListener(this);
                 itemView.setOnLongClickListener(this);
@@ -83,6 +86,7 @@ public class ShowEventActivity extends AppCompatActivity {
             public void updateView(Event e) {
                 //set the text for the cards
                 myText1.setText(e.getTitle());
+                myText3.setText(e.getTime());
             }
 
             @Override
