@@ -195,15 +195,25 @@ public class MainActivity extends AppCompatActivity {
         List<Event> tempList = new ArrayList<>();
 
         Event e4 = new Event("Senior Design Meeting", "December 15, 2021", "10 : 00 AM");
+        Event e10 = new Event("Clean House", "December 15, 2021", "11 : 00 AM");
         Event e1 = new Event("Lunch", "December 15, 2021", "12 : 00 PM");
+        Event e11 = new Event("Study for Exams", "December 15, 2021", "5 : 30 PM");
+        Event e12 = new Event("Meet with math group", "December 15, 2021", "2 : 00 PM");
         Event e2 = new Event("Math Exam", "December 15, 2021", "3 : 30 PM");
+        Event e13 = new Event("Dinner", "December 15, 2021", "6 : 30 PM");
+        Event e14 = new Event("Get groceries", "December 15, 2021", "7 : 30 PM");
         Event e5 = new Event("Android Presentation", "December 15, 2021", "1 : 00 PM");
         Event e3 = new Event("Finish English Essay", "December 15, 2021", "11 : 59 PM");
 
         tempList.add(e4);
+        tempList.add(e10);
         tempList.add(e1);
-        tempList.add(e2);
         tempList.add(e5);
+        tempList.add(e12);
+        tempList.add(e2);
+        tempList.add(e11);
+        tempList.add(e13);
+        tempList.add(e14);
         tempList.add(e3);
 
         tempMap.put("December 15, 2021", tempList);
