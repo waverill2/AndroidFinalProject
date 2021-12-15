@@ -56,7 +56,8 @@ public class MainActivity extends AppCompatActivity {
         HashMap<Integer, String> monthMap = createMonthMap();
 
         //create a hash map the holds the events based on the date
-        HashMap<String, List<Event>> eventMap = new HashMap<>();
+        //HashMap<String, List<Event>> eventMap = new HashMap<>();
+        HashMap<String, List<Event>> eventMap = createInitialData();
 
         //this is the calendar view listener that helps us get the date selected by user
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
@@ -186,5 +187,38 @@ public class MainActivity extends AppCompatActivity {
 
         //return the complete hashmap
         return monthMap;
+    }
+
+    //create initial events for demo purposes
+    public HashMap<String, List<Event>> createInitialData() {
+        HashMap <String, List<Event>> tempMap = new HashMap<>();
+        List<Event> tempList = new ArrayList<>();
+
+        Event e4 = new Event("Senior Design Meeting", "December 15, 2021", "10 : 00 AM");
+        Event e1 = new Event("Lunch", "December 15, 2021", "12 : 00 PM");
+        Event e2 = new Event("Math Exam", "December 15, 2021", "3 : 30 PM");
+        Event e5 = new Event("Android Presentation", "December 15, 2021", "1 : 00 PM");
+        Event e3 = new Event("Finish English Essay", "December 15, 2021", "11 : 59 PM");
+
+        tempList.add(e4);
+        tempList.add(e1);
+        tempList.add(e2);
+        tempList.add(e5);
+        tempList.add(e3);
+
+        tempMap.put("December 15, 2021", tempList);
+
+        Event e6 = new Event("CS Exam", "December 16, 2021", "8 : 00 AM");
+        Event e7 = new Event("Advisor Meeting", "December 16, 2021", "1 : 00 PM");
+        Event e8 = new Event("Basketball Game", "December 16, 2021", "6 : 00 PM");
+
+        List<Event> tempList2 = new ArrayList<>();
+
+        tempList2.add(e6);
+        tempList2.add(e7);
+        tempList2.add(e8);
+
+        tempMap.put("December 16, 2021", tempList2);
+        return tempMap;
     }
 }

@@ -46,15 +46,7 @@ public class CreateEventActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
-        createNotificationChannel();
-
-            NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "CHANNEL_ID")
-                    .setSmallIcon(R.drawable.calendar_image)
-                    .setContentTitle("New Event")
-                    .setContentText("Event Created")
-                    .setPriority(NotificationCompat.PRIORITY_DEFAULT);
-
-            NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
+        //createNotificationChannel();
 
         //add the event listener to the save button
         saveButton.setOnClickListener(new View.OnClickListener() {
@@ -72,12 +64,23 @@ public class CreateEventActivity extends AppCompatActivity {
                 //go back to main activity
                 CreateEventActivity.this.finish();
 
-            notificationManager.notify(notificationID, builder.build());
-            notificationID++;
+                //remaining code for setting up notifications
+                createNotificationChannel();
+                NotificationCompat.Builder builder = new NotificationCompat.Builder(CreateEventActivity.this, "CHANNEL_ID")
+                    .setSmallIcon(R.drawable.calendar_image)
+                    .setContentTitle("NEW EVENT ADDED!")
+                    .setContentText(eventInputText.getText().toString())
+                    .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+
+                NotificationManagerCompat notificationManager = NotificationManagerCompat.from(CreateEventActivity.this);
+
+                notificationManager.notify(notificationID, builder.build());
+                notificationID++;
             }
         });
 
     }
+
     private void createNotificationChannel() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             CharSequence name = "final project";
